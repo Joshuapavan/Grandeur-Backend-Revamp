@@ -15,7 +15,7 @@ import java.util.function.Function;
 @Service
 public class JWTServiceImpl {
 
-    private String generateToken(UserDetails userDetails){
+    public String generateToken(UserDetails userDetails){
         return Jwts.builder()
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
@@ -45,4 +45,15 @@ public class JWTServiceImpl {
     public String getEmailFromToken(String token){
         return getClaim(token, Claims::getAudience);
     }
+
+    public boolean isTokenValid(String token, UserDetails userDetails){
+        final String email = getEmailFromToken(token);
+        return (email.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    private boolean isTokenExpired(String token) {
+        return getClaim(token, Claims::getExpiration).before(new Date());
+    }
+
+
 }
