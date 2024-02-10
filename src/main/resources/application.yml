@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/grandeur_dev
+    username: root
+    password: Josh@123
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
