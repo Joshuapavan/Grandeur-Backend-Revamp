@@ -33,7 +33,7 @@ public class JWTAuthFilterConfig extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         String authHeader = request.getHeader("Authorization");
-        if (authHeader.isEmpty() || StringUtils.startsWithIgnoreCase(authHeader, "Bearer")){
+        if (authHeader.isEmpty() || StringUtils.startsWithIgnoreCase(authHeader, "Bearer")) {
             filterChain.doFilter(request, response);
 
             return;
@@ -42,10 +42,10 @@ public class JWTAuthFilterConfig extends OncePerRequestFilter {
         final String jwt = authHeader.substring(7);
         final String email = jwtService.getEmailFromToken(jwt);
 
-        if(!email.isEmpty() && SecurityContextHolder.getContext().getAuthentication() == null){
+        if (!email.isEmpty() && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userService.userDetailsService().loadUserByUsername(email);
 
-            if(jwtService.isTokenValid(jwt, userDetails)){
+            if (jwtService.isTokenValid(jwt, userDetails)) {
                 SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
 
                 UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
