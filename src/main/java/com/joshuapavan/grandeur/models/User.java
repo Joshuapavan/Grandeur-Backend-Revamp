@@ -15,26 +15,22 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
-@Getter
-@Setter
-@RequiredArgsConstructor
-@AllArgsConstructor
 @Entity
+@NoArgsConstructor
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
     private Long id;
 
-    @Column(nullable = false, length = 15)
+    @Column(length = 20)
     private String userName;
 
     @Column(unique = true, nullable = false)
     @Email
     private String email;
-    
-    @Column(nullable = false, length = 30)
+
+    @Column(nullable = false)
     private String password;
 
     @Enumerated(value = EnumType.STRING)

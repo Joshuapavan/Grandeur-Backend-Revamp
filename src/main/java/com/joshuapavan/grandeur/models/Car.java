@@ -3,6 +3,7 @@ package com.joshuapavan.grandeur.models;
 import com.joshuapavan.grandeur.enums.CarType;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Car {
 
     @Id
