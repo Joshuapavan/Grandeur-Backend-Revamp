@@ -4,10 +4,13 @@ import com.joshuapavan.grandeur.enums.CarType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -44,10 +47,9 @@ public class Car {
     @ElementCollection
     private List<byte[]> images;
 
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
-    @CreatedDate
-    private LocalDate createdAt;
-
-    @LastModifiedDate
-    private LocalDate lastUpdatedAt;
+    @UpdateTimestamp
+    private LocalDateTime lastUpdatedAt;
 }

@@ -3,20 +3,23 @@ package com.joshuapavan.grandeur.models;
 import com.joshuapavan.grandeur.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+@RequiredArgsConstructor
 public class User implements UserDetails {
 
     @Id
@@ -42,11 +45,11 @@ public class User implements UserDetails {
     @Lob
     private Byte[] profileImage;
 
-    @CreatedDate
-    private LocalDate createdAt;
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
-    @LastModifiedDate
-    private LocalDate lastUpdatedAt;
+    @UpdateTimestamp
+    private LocalDateTime lastUpdatedAt;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
