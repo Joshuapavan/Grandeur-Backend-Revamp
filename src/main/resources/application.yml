@@ -8,6 +8,3 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
-
-grandeur:
-  secretKey: "bW3CyvlGhU4x+INehjFK57O0TLZDKrOBNkorajEcBsjBVOLEmBIsKzUAYJL1K2O/XBIR20NfciDKKr4OxKxxdEekUOa7hx5+2zq2CZYxd5wWHV3oLI7noudKMlF1MFsXNg4K0j9tod1gyRRM+7ffw0Qw+ZW1CQ6qLvOojqgPV++LZi3bBM/0WXrKyxa3JSSHQ8x7XvxTBhZ9NtljXvCHZm/2dlUJEq8ZLSmnG/k6yw50gk/ha4V860bvAkNHq0B/rNHyA+4xuRU4grcoWHIZE8z9GngmpZbacHPo/wANbXG8mOVLuER33tXdFjFFfdHusigLToC/i7RHZJIKLjezxoo4Yw4XtqJkWaKbmEX4qU0"
