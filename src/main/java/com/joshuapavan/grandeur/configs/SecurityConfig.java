@@ -26,9 +26,10 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         request -> request
-                                .requestMatchers("/api/v1/auth/**").permitAll()
-                                .requestMatchers("/api/v1/admin/**").hasAnyAuthority(Role.ADMIN.name())
-                                .requestMatchers("/api/v1/cars/**").hasAnyAuthority(Role.USER.name())
+                                .requestMatchers("/api/v*/auth/**").permitAll()
+                                .requestMatchers("/api/v*/admin/**").hasAnyAuthority(Role.ADMIN.name())
+                                .requestMatchers("/api/v*/cars/**").hasAnyAuthority(Role.USER.name())
+                                .requestMatchers("/api/v*/users/**").hasAnyAuthority(Role.USER.name())
 //                                .requestMatchers("/api/v1/admin/cars/**").hasAnyAuthority(Role.ADMIN.name())
 //                                .requestMatchers("/api/v1/cars/**").hasAnyAuthority(Role.ADMIN.name())
                                 .anyRequest().authenticated()
