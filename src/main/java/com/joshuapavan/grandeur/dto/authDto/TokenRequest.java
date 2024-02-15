@@ -1,4 +1,4 @@
-package com.joshuapavan.grandeur.dto.auth;
+package com.joshuapavan.grandeur.dto.authDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

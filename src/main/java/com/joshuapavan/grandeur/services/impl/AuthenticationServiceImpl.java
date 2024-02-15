@@ -1,9 +1,9 @@
 package com.joshuapavan.grandeur.services.impl;
 
-import com.joshuapavan.grandeur.dto.auth.LoginRequest;
-import com.joshuapavan.grandeur.dto.auth.SignUpRequest;
-import com.joshuapavan.grandeur.dto.auth.TokenRequest;
-import com.joshuapavan.grandeur.dto.auth.TokenResponse;
+import com.joshuapavan.grandeur.dto.authDto.LoginRequest;
+import com.joshuapavan.grandeur.dto.authDto.SignUpRequest;
+import com.joshuapavan.grandeur.dto.authDto.TokenRequest;
+import com.joshuapavan.grandeur.dto.authDto.TokenResponse;
 import com.joshuapavan.grandeur.enums.Role;
 import com.joshuapavan.grandeur.models.User;
 import com.joshuapavan.grandeur.repositories.UserRepo;
