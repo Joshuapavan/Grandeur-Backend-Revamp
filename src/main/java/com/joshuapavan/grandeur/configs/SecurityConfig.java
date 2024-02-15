@@ -28,8 +28,8 @@ public class SecurityConfig {
                         request -> request
                                 .requestMatchers("/api/v1/auth/**").permitAll()
                                 .requestMatchers("/api/v1/admin/**").hasAnyAuthority(Role.ADMIN.name())
-//                                .requestMatchers("/api/v1/admin/cars/**").hasAnyAuthority(Role.ADMIN.name())
                                 .requestMatchers("/api/v1/cars/**").hasAnyAuthority(Role.USER.name())
+//                                .requestMatchers("/api/v1/admin/cars/**").hasAnyAuthority(Role.ADMIN.name())
 //                                .requestMatchers("/api/v1/cars/**").hasAnyAuthority(Role.ADMIN.name())
                                 .anyRequest().authenticated()
                         )
