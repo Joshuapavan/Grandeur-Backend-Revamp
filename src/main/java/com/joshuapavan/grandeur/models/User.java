@@ -3,6 +3,7 @@ package com.joshuapavan.grandeur.models;
 import com.joshuapavan.grandeur.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,6 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class User implements UserDetails {
 
     @Id
