@@ -1,9 +1,9 @@
-package com.joshuapavan.grandeur.controllers;
+package com.joshuapavan.grandeur.controllers.auth;
 
-import com.joshuapavan.grandeur.dto.auth.LoginRequest;
-import com.joshuapavan.grandeur.dto.auth.SignUpRequest;
-import com.joshuapavan.grandeur.dto.auth.TokenRequest;
-import com.joshuapavan.grandeur.dto.auth.TokenResponse;
+import com.joshuapavan.grandeur.dto.authDto.LoginRequest;
+import com.joshuapavan.grandeur.dto.authDto.SignUpRequest;
+import com.joshuapavan.grandeur.dto.authDto.TokenRequest;
+import com.joshuapavan.grandeur.dto.authDto.TokenResponse;
 import com.joshuapavan.grandeur.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -43,6 +43,9 @@ public class Car {
     @JoinColumn(name = "user_id",referencedColumnName = "id")
     private User user;
 
+    @Column(nullable = false)
+    private boolean isApproved = false;
+
     // Images
     @ElementCollection
     private List<byte[]> images;
